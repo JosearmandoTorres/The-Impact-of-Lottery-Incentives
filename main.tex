@@ -1,0 +1,321 @@
+\documentclass[12pt]{article}
+
+% ============================================
+% PACKAGES
+% ============================================
+
+% Page layout
+\usepackage[margin=1in]{geometry}
+
+% Font and encoding
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}  % Times-like font
+
+% Math
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Graphics and figures
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subcaption}
+
+% Tables
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{array}
+
+% Citations and bibliography
+\usepackage{natbib}
+\bibliographystyle{apa} 
+
+% Hyperlinks (load last among most packages)
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    breaklinks=true
+}
+
+% Line spacing
+\usepackage{setspace}
+\onehalfspacing
+
+% For appendix
+\usepackage{appendix}
+
+% For landscape pages (if needed for wide tables)
+\usepackage{pdflscape}
+
+% ============================================
+% CUSTOM COMMANDS
+% ============================================
+
+% For easier table notes
+\newcommand{\tablenote}[1]{\par\smallskip\footnotesize #1}
+
+% ============================================
+% TITLE PAGE SETUP
+% ============================================
+
+\title{\Large\textbf{The Impact of Lottery Incentives:\\ 
+Increasing Response Rates Can Decrease Survey Accuracy}}
+
+\author{
+    Jerold Pearson\thanks{Department of Political Science, University Name. Email: author1@university.edu} 
+    \and 
+    Roger E. Levine\thanks{Department of Economics, Other University. Email: author2@other.edu}
+    \and
+    Jon A. Krosnick\thanks{Department of Sociology, Third University. Email: author3@third.edu}
+    \and
+    Resty Fufunan\thanks{School of Public Policy, Fourth University. Email: author4@fourth.edu}
+    \and
+    Josearmando Torres\thanks{Department of Government, Fifth University. Email: author5@fifth.edu}
+}
+
+\date{\today}
+
+% ============================================
+% DOCUMENT BEGINS
+% ============================================
+
+\begin{document}
+
+% Title
+\maketitle
+
+% ============================================
+% ABSTRACT
+% ============================================
+
+\begin{abstract}
+\noindent
+Your abstract goes here. This should be a concise summary of your paper, typically 150-250 words. It should briefly describe the research question, methods, key findings, and implications. The abstract is often the most-read part of your paper, so make it count. Include the main contribution and why readers should care about your findings.
+\end{abstract}
+
+\thispagestyle{empty}  % No page number on title page
+\newpage
+\setcounter{page}{1}
+
+% ============================================
+% INTRODUCTION
+% ============================================
+
+\section{Introduction}
+
+Your introduction goes here. Start by motivating the research question and establishing why it matters. What puzzle or gap in the literature are you addressing?
+
+Cite relevant work like this \citep{Author2020} or as \citet{Author2020} showed. You can cite multiple sources \citep{Author2020, OtherAuthor2019}.
+
+The introduction should:
+\begin{itemize}
+    \item Establish the importance of the topic
+    \item Identify the specific research question
+    \item Preview your approach and findings
+    \item Outline the paper's structure
+\end{itemize}
+
+% ============================================
+% THEORY / LITERATURE REVIEW
+% ============================================
+
+\section{Theoretical Framework}
+
+Present your theoretical framework here. What mechanisms do you propose? What hypotheses do you derive?
+
+\subsection{First Mechanism}
+
+Describe the first mechanism or theoretical argument.
+
+\subsection{Second Mechanism}
+
+Describe additional mechanisms as needed.
+
+% ============================================
+% DATA AND METHODS
+% ============================================
+
+\section{Data and Methods}
+
+Describe your data sources and methodological approach.
+
+\subsection{Data Sources}
+
+Our primary data source is [describe your data]. Table~\ref{tab:descriptive} presents descriptive statistics.
+
+% Example table
+\begin{table}[H]
+\centering
+\caption{Descriptive Statistics}
+\label{tab:descriptive}
+\begin{tabular}{lccccc}
+\toprule
+Variable & Mean & SD & Min & Max & N \\
+\midrule
+Variable 1 & 0.50 & 0.25 & 0 & 1 & 1,000 \\
+Variable 2 & 3.45 & 1.23 & 1 & 7 & 1,000 \\
+Variable 3 & 45.2 & 15.8 & 18 & 85 & 1,000 \\
+\bottomrule
+\end{tabular}
+\tablenote{\textit{Note:} Data from [source]. Sample restricted to [criteria].}
+\end{table}
+
+\subsection{Survey Measures}
+
+If you use survey questions, present them clearly:
+
+\begin{quote}
+On [topic], some people argue that [position A]. Others argue that [position B]. Still, others are somewhere in between. Where would you place yourself on this scale, or haven't you thought much about this?
+\end{quote}
+
+Respondents place themselves on a 1 to 7 scale, where 1 indicates [position A] and 7 indicates [position B].
+
+\subsection{Empirical Strategy}
+
+We employ [method] to estimate [what you're estimating]:
+
+\begin{equation}
+Y_i = \alpha + \beta X_i + \mathbf{Z}_i'\gamma + \varepsilon_i
+\label{eq:main}
+\end{equation}
+
+\noindent where $Y_i$ is the outcome for individual $i$, $X_i$ is the key independent variable, and $\mathbf{Z}_i$ is a vector of control variables.
+
+% ============================================
+% RESULTS
+% ============================================
+
+\section{Results}
+
+Present your main findings here. Figure~\ref{fig:main} shows [description].
+
+% Example figure placeholder
+\begin{figure}[H]
+\centering
+% \includegraphics[width=0.8\textwidth]{your_figure.pdf}
+\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Your Figure Here]\vspace{3cm}}}
+\caption{Main Results Figure}
+\label{fig:main}
+\tablenote{\textit{Note:} Description of what the figure shows. Points show [what]. Lines show [confidence intervals, etc.].}
+\end{figure}
+
+Table~\ref{tab:regression} presents regression results.
+
+% Example regression table
+\begin{table}[H]
+\centering
+\caption{Regression Results}
+\label{tab:regression}
+\begin{tabular}{lccc}
+\toprule
+ & Model 1 & Model 2 & Model 3 \\
+\midrule
+Key Variable & 0.127$^{*}$ & 0.135$^{*}$ & 0.142$^{*}$ \\
+ & (0.012) & (0.013) & (0.014) \\
+Control 1 & & 0.007 & 0.005 \\
+ & & (0.012) & (0.011) \\
+Control 2 & & & $-$0.029 \\
+ & & & (0.111) \\
+Intercept & $-$0.463$^{*}$ & $-$0.455$^{*}$ & $-$0.448$^{*}$ \\
+ & (0.221) & (0.225) & (0.228) \\
+\midrule
+R$^2$ & 0.354 & 0.356 & 0.358 \\
+N & 267 & 267 & 267 \\
+\bottomrule
+\end{tabular}
+\tablenote{$^{*}p < 0.05$. Standard errors in parentheses.}
+\end{table}
+
+\subsection{Robustness Checks}
+
+Describe any robustness checks or alternative specifications.
+
+% ============================================
+% DISCUSSION / CONCLUSION
+% ============================================
+
+\section{Discussion and Conclusion}
+
+Summarize your findings and discuss their implications.
+
+What are the main takeaways? How do your findings contribute to existing literature? What are the limitations? What questions remain for future research?
+
+% ============================================
+% REFERENCES
+% ============================================
+
+\newpage
+\singlespacing
+
+% Option 1: Use BibTeX (recommended)
+% \bibliography{references}
+
+% Option 2: Manual bibliography (for template demonstration)
+\begin{thebibliography}{99}
+
+\bibitem[Author(2020)]{Author2020}
+Author, A. (2020). 
+\newblock Article title here.
+\newblock \textit{Journal Name}, 45(3), 123--145.
+
+\bibitem[Other Author(2019)]{OtherAuthor2019}
+Other Author, B. \& Third Author, C. (2019). 
+\newblock Book title here.
+\newblock Publisher Name.
+
+\end{thebibliography}
+
+% ============================================
+% APPENDIX
+% ============================================
+
+\newpage
+\onehalfspacing
+\appendix
+\section*{Appendix}
+\addcontentsline{toc}{section}{Appendix}
+
+\renewcommand{\thesection}{\Alph{section}}
+\renewcommand{\thetable}{\Alph{section}\arabic{table}}
+\renewcommand{\thefigure}{\Alph{section}\arabic{figure}}
+\setcounter{section}{0}
+\setcounter{table}{0}
+\setcounter{figure}{0}
+
+\section{Additional Tables and Figures}
+
+Present supplementary analyses here.
+
+% Example appendix table
+\begin{table}[H]
+\centering
+\caption{Appendix Table: Additional Results}
+\label{tab:appendix1}
+\begin{tabular}{lcc}
+\toprule
+ & Full Sample & Subsample \\
+\midrule
+Variable & 0.50 & 0.55 \\
+ & (0.10) & (0.12) \\
+\midrule
+N & 1,000 & 500 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\section{Robustness Analyses}
+
+Additional robustness checks can go here.
+
+\section{Variable Definitions}
+
+\begin{itemize}
+    \item \textbf{Variable 1:} Definition and coding.
+    \item \textbf{Variable 2:} Definition and coding.
+\end{itemize}
+
+\end{document}
