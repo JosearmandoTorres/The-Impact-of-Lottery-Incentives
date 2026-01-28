@@ -10,7 +10,7 @@
 % Font and encoding
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{mathptmx}  % Times-like font
+\usepackage{indentfirst}
 
 % Math
 \usepackage{amsmath}
@@ -51,6 +51,10 @@
 % For landscape pages (if needed for wide tables)
 \usepackage{pdflscape}
 
+% For editorial comments and TODOs
+\usepackage{xcolor}
+\newcommand{\new}[1]{\textcolor{blue}{#1}}  % For marking new content added in revision
+
 % ============================================
 % CUSTOM COMMANDS
 % ============================================
@@ -66,15 +70,15 @@
 Increasing Response Rates Can Decrease Survey Accuracy}}
 
 \author{
-    Jerold Pearson\thanks{Department of Political Science, University Name. Email: author1@university.edu} 
+    Jerold Pearson\thanks{Email: jpearson@alumni.stanford.edu} 
     \and 
-    Roger E. Levine\thanks{Department of Economics, Other University. Email: author2@other.edu}
+    Roger E. Levine\thanks{x}
     \and
-    Jon A. Krosnick\thanks{Department of Sociology, Third University. Email: author3@third.edu}
+    Jon A. Krosnick\thanks{Stanford University. Email: krosnick@stanford.edu}
     \and
-    Resty Fufunan\thanks{School of Public Policy, Fourth University. Email: author4@fourth.edu}
+    Resty Fufunan\thanks{Stanford Institute for Research in the Social Sciences. Email: resty@stanford.edu}
     \and
-    Josearmando Torres\thanks{Department of Government, Fifth University. Email: author5@fifth.edu}
+    Josearmando Torres\thanks{Stanford Institute for Research in the Social Sciences. Email: jtorres0@stanford.edu}
 }
 
 \date{\today}
@@ -94,7 +98,8 @@ Increasing Response Rates Can Decrease Survey Accuracy}}
 
 \begin{abstract}
 \noindent
-Your abstract goes here. This should be a concise summary of your paper, typically 150-250 words. It should briefly describe the research question, methods, key findings, and implications. The abstract is often the most-read part of your paper, so make it count. Include the main contribution and why readers should care about your findings.
+When offering incentives with a fixed budget, survey researchers can conduct lotteries with many winners of smaller prizes or with fewer winners of larger prizes.  A respondent's expected value of the reward is the same, but one approach may be more psychologically compelling than the other.  In an online survey of a listed sample, the present study randomly assigned each potential respondent to be offered five chances to win \$100, one chance to win \$500, or no incentive.  Both incentive offers increased the survey's response rate significantly and equally, contradicting earlier research.  Remarkably, the incentives decreased sample representativeness by increasing participation of subgroups that were already over-represented in the no-incentive condition.  Thus, incentives may appear to be helpful when in fact they compromise survey accuracy, so future studies of incentive effects should explore their impact on sample composition as well as on response rates.
+
 \end{abstract}
 
 \thispagestyle{empty}  % No page number on title page
@@ -107,215 +112,271 @@ Your abstract goes here. This should be a concise summary of your paper, typical
 
 \section{Introduction}
 
-Your introduction goes here. Start by motivating the research question and establishing why it matters. What puzzle or gap in the literature are you addressing?
+Survey researchers have been attentive to response rates for many years (Steeh 1981), and the response rate has been considered an important indicator of survey accuracy (Backstrom and Hursh 1963; Babbie 1990; Aday 1996; Rea and Parker 1997). But as response rates have declined—for mail (CASRO 1982), telephone (Holbrook, Krosnick, \& Pfent 2007), and online (Sheehan 2001) surveys—researchers have explored and experimented with a range of issues related to survey participation. Among these issues are length of the survey, time in the field, salience, affiliation with the sponsor, design and appearance, type of postage and delivery method, pre-notifications, personalization, salutations, follow-ups, and refusal conversions (Peytchev, Baxter, \& Carley-Baxter 2009; Healey, Macpherson, \& Kuijten 2005; Pearson and Levine 2003; Edwards et al. 2002; Cook, Heath, \& Thompson 2000; Dillman, Tortora, \& Bowker 1998; Fox, Crask, \& Kim 1988; Yu and Cooper 1983).
 
-Cite relevant work like this \citep{Author2020} or as \citet{Author2020} showed. You can cite multiple sources \citep{Author2020, OtherAuthor2019}.
+One issue related to survey response that continues to be of particular interest is incentives. Research has been conducted with a variety of incentives—including cash and other monetary incentives (both prepaid and promised), charity donations, and lotteries—but the results have been mixed (for reviews, see Singer 2002; Church 1993). Cash and prepaid incentives generally increase response rates, while findings for lotteries, promised incentives, and charity donations have been more variable.
 
-The introduction should:
+While much effort has been invested in increasing response rates, attention has also been given to the consequences of these efforts. Some consumers of survey data assume that increasing the response rate is, in itself, a desired objective, but researchers have documented possible negative effects of incentives on response quality, item nonresponse, response distribution, and respondent motivation, honesty, and expectations (Singer, Van Hoewyk, \& Maher 2000; Shettle and Mooney 1999; Baumgartner et al. 1998; Schwarz and Clore 1996; Brehm 1994; James and Bolstein 1990; for a review, see Singer 2002).
+
+Another possible consequence of incentives—that can be either positive or negative—is their potential effect on sample composition: positive if incentives increase response among subgroups that would otherwise be underrepresented (making the sample more representative of the population), but negative if they increase response among subgroups that are already overrepresented (skewing the sample even further from the population).
+
+Indeed, some studies have reported that incentives increase response among women (Whiteman et al. 2002; Duffer et al. 1994) and lower-income individuals (Abreu, Martin, \& Winters 1999; Mack et al. 1998; Singer et al. 1999; Kulka 1994). Studies have also reported that incentives increase response rates among respondents for whom the topic is of less salience (Groves, Singer, \& Corning 1999; Shettle and Mooney 1999; Baumgartner and Rathbun 1997).
+
+But what about respondents who feel less affinity with the sponsor of the survey? It seems likely that people who feel greater affinity would be more likely to respond to a survey invitation. Would incentives increase response among the others, who affiliate less closely and have a weaker relationship with the sponsor? If so, incentives could be of benefit by making the sample more representative of the population. Or, conversely, would incentives increase response rates even further among those who affiliate most closely with the sponsor? If that were the case, incentives would make things worse by further skewing the sample and making it even less representative.
+
+The study described in this paper explored these issues by seeking to answer three questions: Do lottery incentives increase response to online surveys? What, if any, effect do incentives have on sample composition? And does the framing of a lottery—multiple chances to win smaller prizes versus fewer chances to win larger prizes—affect response?
+
+On this last question, prospect theory suggests that the way a proposition is framed can affect decisions (Tversky and Kahneman 1981). If potential respondents focus mainly on the number of chances to win, then offering five chances to win \$100 should be more motivating than offering one chance to win \$500. Conversely, if they focus mainly on prize magnitude, then one chance to win \$500 should be more motivating. Our experiment tested these two framings—holding expected value constant—along with a control group offered no incentive.
+
+% ============================================
+% FOCUSED LITERATURE REVIEW - LOTTERY INCENTIVES
+% ============================================
+
+\textcolor{blue}{\section{Literature Review}}
+
+\textcolor{blue}{The existing literature on lottery incentives presents a notably mixed picture. While lotteries offer an appealing cost-effective alternative to guaranteed payments, experimental studies reveal substantial heterogeneity in their effectiveness across contexts. This review focuses specifically on studies testing lottery incentives against no-incentive control conditions, as this directly parallels our experimental design.}
+
+\textcolor{blue}{\subsection{Evidence Supporting Lottery Effectiveness}}
+
+\textcolor{blue}{A substantial body of research has documented significant positive effects of lottery incentives on survey response rates. Early studies established that lotteries could meaningfully increase participation: McCool (1991) found a 12 percentage point increase with a \$50 savings bond lottery, Blythe (1986) observed an 11 percentage point gain among social workers, and Balakrishnan et al. (1992) reported a 6.8 point increase in a large consumer survey.}
+
+\textcolor{blue}{These positive effects have been replicated across diverse populations and contexts. Studies of student populations have shown particularly consistent benefits (Laguilles et al., 2011; LaRose \& Tsai, 2014; Sánchez-Fernández et al., 2010; Porter \& Whitcomb, 2003). Lottery incentives have also proven effective in general population surveys (Olsen et al., 2012; Johansson et al., 1997; Pedersen \& Nielsen, 2016; Woodward et al., 1985; Marrett et al., 1992), professional samples (London \& Dommeyer, 1990; Bosnjak \& Tuten, 2003; Angur \& Nataraajan, 1995), and even physician surveys in some cases (Baron et al., 2001; Robertson et al., 2005; Drummond et al., 2014). International replications suggest these effects generalize beyond U.S. samples (Angur \& Nataraajan, 1995; Johansson et al., 1997; Conn et al., 2024).}
+
+\textcolor{blue}{Recent meta-analytic evidence confirms that lottery incentives, on average, increase response rates, though with smaller effect sizes than cash incentives. Göritz (2006) found an odds ratio of 1.19 for lottery incentives in web surveys, and Abdelazeem et al. (2023) reported a risk ratio of 1.12 for lotteries compared to 1.25 for cash.}
+
+\textcolor{blue}{\subsection{Evidence Against Lottery Effectiveness}}
+
+\textcolor{blue}{Despite these positive findings, a comparable body of research has failed to find significant effects of lottery incentives---or has found that lotteries underperform other incentive types.}
+
+\textcolor{blue}{Several well-powered studies have found no significant difference between lottery and control conditions (Warriner et al., 1996; Harris et al., 2008; Lipps, 2010; Brennan et al., 1993; Mortagy et al., 1985). Mortagy et al. (1985) famously characterized their lottery condition as ``a useless raffle,'' finding identical response rates (68.1\%) in both groups.}
+
+\textcolor{blue}{Null findings are particularly common in surveys of physicians and healthcare professionals (Moses \& Clark, 2004; Cottrell et al., 2015; Grava-Gubins \& Scott, 2008; Halpern et al., 2011; Ulrich et al., 2005; Dykema et al., 2011; Gallagher et al., 2001; McLaren \& Shelley, 2000; So et al., 2018), older adults (Finsen \& Storeheier, 2006; Gjøstein et al., 2016; Roberts et al., 2000), and professional/executive populations (Lorenzi et al., 1988; Coryn et al., 2020; Golden et al., 1981). Notably, Denton and Tsai (1991) found lottery incentives ineffective among college alumni---a population directly comparable to our Stanford alumni sample.}
+
+\textcolor{blue}{Perhaps most strikingly, several studies have found that small prepaid cash incentives significantly outperform much larger lottery prizes. Larson and Chow (2003) found that a \$1 prepaid incentive outperformed a \$600 lottery, and Lorenzi et al. (1988) found lottery incentives performed significantly worse than \$1 prepaid cash among business executives.}
+
+\textcolor{blue}{\subsection{Moderating Factors}}
+
+\textcolor{blue}{The heterogeneity in lottery effectiveness appears attributable to several moderating factors.}
+
+\textcolor{blue}{\textbf{Population characteristics.} Student and younger populations appear more responsive to lottery incentives (Laguilles et al., 2011; LaRose \& Tsai, 2014; Porter \& Whitcomb, 2003; Martinson et al., 2000), while studies of physicians, professionals, and older adults often show null effects. Income may also moderate effectiveness, with Zhang et al. (2017) finding larger lottery effects among lower-income respondents.}
+
+\textcolor{blue}{\textbf{Prize magnitude and structure.} Evidence on prize amount is mixed. Some studies suggest a threshold effect, with larger prizes more effective (Hubbard \& Little, 1988 found \$200 helped but \$50-\$150 did not; Gajic et al., 2012 found high-value lotteries effective but low-value lotteries not). However, other studies find no significant differences across lottery amounts (Leung et al., 2002; Halpern et al., 2011). Deutskens et al. (2004) found that lotteries with smaller prizes but higher probability of winning were most effective.}
+
+\textcolor{blue}{\textbf{Lottery type and timing.} Prepaid scratch tickets appear to outperform promised lottery entries (Olsen et al., 2012; Guo et al., 2016), possibly because their immediacy and tangibility increase perceived value. Tuten et al. (2004) found that immediate notification of lottery results outperformed delayed notification. Pre-incentive lotteries (unconditional) may be more effective than post-incentive lotteries (conditional on completion) (Sánchez-Fernández et al., 2010).}
+
+\textcolor{blue}{\textbf{Interaction with survey characteristics.} Spry et al. (1989) found lottery incentives helped only when combined with a short questionnaire, suggesting interactions between incentive type and respondent burden. Cobanoglu and Cobanoglu (2003) found that lottery combined with other incentive types was effective, while lottery alone was not.}
+
+\textcolor{blue}{\subsection{Lottery Incentives and Sample Composition}}
+
+\textcolor{blue}{A critical but understudied question is whether lottery incentives affect not just response rates but also the composition of the responding sample. If incentives differentially motivate certain subgroups, they may increase response while simultaneously reducing representativeness.}
+
+\textcolor{blue}{Several studies provide indirect evidence of differential effects. Laguilles et al. (2011) observed that males showed larger response increases for technology prizes while females responded more to dining-related prizes. Zhang et al. (2017) found larger lottery effects among low-income staff compared to higher-income staff. These patterns suggest incentives may disproportionately attract certain demographic groups.}
+
+\textcolor{blue}{Robertson et al. (2005) provides rare direct evidence, finding that a lottery incentive improved physician response rates and also examining representativeness of responders versus nonresponders. More broadly, Petrolia and Bhattacharjee (2009) found that incentives altered the education composition of their sample, and Goyder (1994) found that prepaid incentives yielded a more representative sample overall.}
+
+\textcolor{blue}{However, the possibility that lottery incentives might \textit{worsen} sample composition---by increasing response among groups already inclined to participate---has received little empirical attention. Our study addresses this gap by examining not only whether lottery incentives increase response, but also whether they do so equally across subgroups---or whether they exacerbate existing differences between likely responders and nonresponders.}
+
+\section{Methods}
+
+The population was defined as people who received degrees from Stanford University between 1955 and 2007, who live in the continental USA or Canada, and for whom Stanford had an e-mail address.  Stanford employees and their spouses, current and former University Trustees, current and former members of the Stanford Alumni Association Board of Directors, and those who had requested to receive no e-mail were excluded from the study.
+
+Three random samples of approximately 2,500 alumni were selected from the population, and each of the individuals was e-mailed a short invitation with a link to participate in the survey.  The invitation was the same for all – except for the "subject" headers and the passages describing the incentive offered for their participation.
+
 \begin{itemize}
-    \item Establish the importance of the topic
-    \item Identify the specific research question
-    \item Preview your approach and findings
-    \item Outline the paper's structure
+    \item Sample 1 was offered no incentive to participate in the survey.
+    \item Sample 2 was informed that five randomly selected respondents (i.e., those who completed the survey) would each win a \$100 Visa gift card.
+    \item Sample 3 was informed that one randomly selected respondent would win a \$500 Visa gift card.
 \end{itemize}
 
-% ============================================
-% THEORY / LITERATURE REVIEW
-% ============================================
+The invitations were e-mailed on June 24, 2008, and three reminders were e-mailed to non-respondents at one-week intervals before the survey was taken off the web on July 20, 2008.  
+Names and demographic data came from Stanford's alumni database.  The demographic composition of the population and the three random samples is in the Appendix. 
 
-\section{Theoretical Framework}
+Class year was used as a proxy for age among undergraduate alumni:
+\begin{itemize}
+    \item Class years 2000-2007: approximate ages 22-29.
+    \item Class years 1990-1999: approximate ages 30-39.
+    \item Class years 1980-1989: approximate ages 40-49.
+    \item Class years 1970-1979: approximate ages 50-59.
+    \item Class years 1955-1969: approximate ages 60 and older.
+\end{itemize}
 
-Present your theoretical framework here. What mechanisms do you propose? What hypotheses do you derive?
+Class year cannot be used as a proxy for age among graduate alumni, mainly because the starting age of graduate students varies widely, but also because the time it takes to complete a graduate degree varies from program to program.  Therefore, results reported by age refer only to undergraduate alumni.
 
-\subsection{First Mechanism}
+In this paper, the term "graduate" alumni refers to people whose only degree from Stanford is a graduate degree.  Those who have a graduate degree in addition to an undergraduate degree from Stanford are included in the "undergraduate" alumni group.
 
-Describe the first mechanism or theoretical argument.
-
-\subsection{Second Mechanism}
-
-Describe additional mechanisms as needed.
-
-% ============================================
-% DATA AND METHODS
-% ============================================
-
-\section{Data and Methods}
-
-Describe your data sources and methodological approach.
-
-\subsection{Data Sources}
-
-Our primary data source is [describe your data]. Table~\ref{tab:descriptive} presents descriptive statistics.
-
-% Example table
-\begin{table}[H]
-\centering
-\caption{Descriptive Statistics}
-\label{tab:descriptive}
-\begin{tabular}{lccccc}
-\toprule
-Variable & Mean & SD & Min & Max & N \\
-\midrule
-Variable 1 & 0.50 & 0.25 & 0 & 1 & 1,000 \\
-Variable 2 & 3.45 & 1.23 & 1 & 7 & 1,000 \\
-Variable 3 & 45.2 & 15.8 & 18 & 85 & 1,000 \\
-\bottomrule
-\end{tabular}
-\tablenote{\textit{Note:} Data from [source]. Sample restricted to [criteria].}
-\end{table}
-
-\subsection{Survey Measures}
-
-If you use survey questions, present them clearly:
-
-\begin{quote}
-On [topic], some people argue that [position A]. Others argue that [position B]. Still, others are somewhere in between. Where would you place yourself on this scale, or haven't you thought much about this?
-\end{quote}
-
-Respondents place themselves on a 1 to 7 scale, where 1 indicates [position A] and 7 indicates [position B].
-
-\subsection{Empirical Strategy}
-
-We employ [method] to estimate [what you're estimating]:
-
-\begin{equation}
-Y_i = \alpha + \beta X_i + \mathbf{Z}_i'\gamma + \varepsilon_i
-\label{eq:main}
-\end{equation}
-
-\noindent where $Y_i$ is the outcome for individual $i$, $X_i$ is the key independent variable, and $\mathbf{Z}_i$ is a vector of control variables.
-
-% ============================================
-% RESULTS
-% ============================================
+Because directionality was predicted for incentives, the statistical significance of differences in response rates between the incented samples and the non-incented sample was assessed through use of Fisher's Exact Test (one-tailed).  The statistical significance of differences in other response rates was assessed through use of the chi-square test.
 
 \section{Results}
 
-Present your main findings here. Figure~\ref{fig:main} shows [description].
+\subsection{Overall Response Rate}
 
-% Example figure placeholder
-\begin{figure}[H]
-\centering
-% \includegraphics[width=0.8\textwidth]{your_figure.pdf}
-\fbox{\parbox{0.8\textwidth}{\centering\vspace{3cm}[Your Figure Here]\vspace{3cm}}}
-\caption{Main Results Figure}
-\label{fig:main}
-\tablenote{\textit{Note:} Description of what the figure shows. Points show [what]. Lines show [confidence intervals, etc.].}
-\end{figure}
-
-Table~\ref{tab:regression} presents regression results.
-
-% Example regression table
-\begin{table}[H]
-\centering
-\caption{Regression Results}
-\label{tab:regression}
-\begin{tabular}{lccc}
-\toprule
- & Model 1 & Model 2 & Model 3 \\
-\midrule
-Key Variable & 0.127$^{*}$ & 0.135$^{*}$ & 0.142$^{*}$ \\
- & (0.012) & (0.013) & (0.014) \\
-Control 1 & & 0.007 & 0.005 \\
- & & (0.012) & (0.011) \\
-Control 2 & & & $-$0.029 \\
- & & & (0.111) \\
-Intercept & $-$0.463$^{*}$ & $-$0.455$^{*}$ & $-$0.448$^{*}$ \\
- & (0.221) & (0.225) & (0.228) \\
-\midrule
-R$^2$ & 0.354 & 0.356 & 0.358 \\
-N & 267 & 267 & 267 \\
-\bottomrule
-\end{tabular}
-\tablenote{$^{*}p < 0.05$. Standard errors in parentheses.}
-\end{table}
-
-\subsection{Robustness Checks}
-
-Describe any robustness checks or alternative specifications.
-
-% ============================================
-% DISCUSSION / CONCLUSION
-% ============================================
-
-\section{Discussion and Conclusion}
-
-Summarize your findings and discuss their implications.
-
-What are the main takeaways? How do your findings contribute to existing literature? What are the limitations? What questions remain for future research?
-
-% ============================================
-% REFERENCES
-% ============================================
-
-\newpage
-\singlespacing
-
-% Option 1: Use BibTeX (recommended)
-% \bibliography{references}
-
-% Option 2: Manual bibliography (for template demonstration)
-\begin{thebibliography}{99}
-
-\bibitem[Author(2020)]{Author2020}
-Author, A. (2020). 
-\newblock Article title here.
-\newblock \textit{Journal Name}, 45(3), 123--145.
-
-\bibitem[Other Author(2019)]{OtherAuthor2019}
-Other Author, B. \& Third Author, C. (2019). 
-\newblock Book title here.
-\newblock Publisher Name.
-
-\end{thebibliography}
-
-% ============================================
-% APPENDIX
-% ============================================
-
-\newpage
-\onehalfspacing
-\appendix
-\section*{Appendix}
-\addcontentsline{toc}{section}{Appendix}
-
-\renewcommand{\thesection}{\Alph{section}}
-\renewcommand{\thetable}{\Alph{section}\arabic{table}}
-\renewcommand{\thefigure}{\Alph{section}\arabic{figure}}
-\setcounter{section}{0}
-\setcounter{table}{0}
-\setcounter{figure}{0}
-
-\section{Additional Tables and Figures}
-
-Present supplementary analyses here.
-
-% Example appendix table
-\begin{table}[H]
-\centering
-\caption{Appendix Table: Additional Results}
-\label{tab:appendix1}
-\begin{tabular}{lcc}
-\toprule
- & Full Sample & Subsample \\
-\midrule
-Variable & 0.50 & 0.55 \\
- & (0.10) & (0.12) \\
-\midrule
-N & 1,000 & 500 \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\section{Robustness Analyses}
-
-Additional robustness checks can go here.
-
-\section{Variable Definitions}
-
+2,336 out of 7,333 alumni participated in the survey, for an overall response rate of 31.9\%.
+Response rates were higher among people with strong affiliations with the sponsor (see Figure 1).  Specifically, the response rate was greater among:
 \begin{itemize}
-    \item \textbf{Variable 1:} Definition and coding.
-    \item \textbf{Variable 2:} Definition and coding.
+    \item Donors (40.6\%) than non-donors (26.5\%) [p < .0001].
+    \item Stanford Alumni Association members (36.4\%) than non-members (26.3\%) [p < .0001].
+    \item Undergraduate alumni (35.0\%) than graduate alumni (27.7\%) [p < .0001].
 \end{itemize}
+
+As shown in Figure 2, the response rate was also somewhat greater among:
+\begin{itemize}
+    \item Women (35.9\%) than men (29.5\%) [p < .0001].
+    \item Alumni 50 and older than among alumni in their 30s and 40s [p < .001].  Response among alumni 
+    \item under 30 was between those groups, though not significantly different from either.
+\end{itemize}
+
+\subsection{Incentives, Sample Composition, and Framing}
+
+Among all alumni, the incentives increased response rates from 30.6% in the non-incented group to 32.5% in the incented groups – a marginally significant difference of 1.9 percentage points [p = .057].  Effects of the incentives were also seen among certain demographic groups (see Figure 3):
+\begin{itemize}
+    \item Donors and women responded at significantly higher rates (of 3.4 points each) to the incentives than to no incentive [p = .046 and p = .041, respectively].  
+    \item Alumni in their 30s and 40s responded at marginally significantly higher rates (of about 5 points) to the incentives than to no incentive [p = .057 and p = .066, respectively].
+\end{itemize}
+
+Within the other demographic groups, the response rate was, at most, a couple points higher in the incented samples than the non-incented sample, but these differences were not significant.
+
+Higher response to the incentives among donors and women (but not among non-donors and men) is particularly noteworthy, because response without an incentive was also higher among donors and women – so not only did the incentives not improve the sample composition by increasing response among underrepresented groups, but the incentives in fact worsened the sample composition by further increasing the participation of overrepresented groups and magnifying the skew already present in the sample.
+
+Without an incentive, women responded more than men did by 4.7 percentage points (33.6\% vs 28.9\%).  But with an incentive, women responded more than men did by 7.3 percentage points – further increasing their disproportional response by another 55\%.  Similarly, without an incentive, donors responded more than non-donors did by 12.5 percentage points (38.3\% vs 25.8\%).  But with an incentive, donors responded more than non-donors did by 14.9 percentage points (41.7\% vs 26.8\%) – further increasing their disproportional response by another 19\%.  (See Figure 4.)
+
+Since the incentives drew a higher response among donors, but not among non-donors, it is possible that a sense of reciprocity provided donors extra motivation to participate (Cialdini 1984): they had given money to Stanford, now Stanford was offering to give money to them.  Fair is fair; what goes around comes around.
+
+The manipulation of the framing of the incentive had no effect on response rates, which were virtually identical to both incentives – 32.6\% in Sample 2 (five chances to win \$100) and 32.4\% in Sample 3 (one chance to win \$500).  Moreover, similar response rates to the two incentives was consistent across all demographic groups: neither incentive outperformed the other within any specific demographic group.  These results are contrary to those of Deutskens, de Ruyter, Wetzels, and Oosterveld (2004).
+
+Multivariate logistic regressions were run to examine the independent effects of the incentives and demographic characteristics of the invited sample members.  The dependent variable was participation in the survey (yes/no).  The independent variables were donor status (donor/non-donor), Alumni Association status (member/non-member), degree level (undergraduate/graduate), class year (5 categories), gender (women/men), and treatment (incentive/no incentive).
+
+People offered an incentive participated at a significantly higher rate than those not offered an incentive.  Participation was also greater among donors, Alumni Association members, undergraduate alumni, and women, and people aged 30-39.  (See Table 1.)
+
+The incentive's impact on response rates was concentrated exclusively among the group of people who had the highest response rate in the non-incented group: women who were donors and Stanford Alumni Association members.  This group manifested an 8.1 percentage point increase in their response rate (p < .037), and no other groups manifested a significant increase.  (See Table 2.)
+
+\section{Discussion}
+
+\new{\subsection{Summary of Findings}}
+
+As expected, response rates for this survey were higher among people who had stronger affiliations with the sponsor.  Although offering incentives significantly increased the response rate, that increase was concentrated among people who were already over-represented in the non-incented sample, thus reducing the representativeness of the participating sample.  Thus, the incentive's impact was greatest for the very groups that needed it least, resulting in a sample that was even less representative with respect to these characteristics.
+
+Furthermore, the impact on the survey response rate was statistically significant but small – 1.9 percentage points.  Therefore, if it is of paramount importance to shake every last possible respondent from the trees, lottery style incentives in an online survey may be of some benefit.  They may also be of benefit for surveys conducted exclusively among those groups most motivated by incentives (in this case, women and donors), when the increased participation of these groups will not make the sample less representative of the population.  Lottery incentives might also be offered selectively if there is reason to believe these groups would otherwise be under-represented in the sample.  But for many projects, incentives may not be worth the extra effort and cost, and may in fact compromise data quality.
+
+\new{\subsection{Connecting to the Broader Literature?}}
+
+\plan{Expand section to integrate findings with literature reviewed above.}
+
+\textcolor{blue}{Our finding that incentives worsened sample composition by increasing participation among already over-represented groups resonates with the limited existing evidence on composition effects. Both findings suggest that incentives do not simply add respondents uniformly but systematically affect \textit{who} participates.}
+
+\textcolor{blue}{The differential effect of incentives on donors versus non-donors may reflect a reciprocity mechanism: donors who have previously given to Stanford may feel a stronger obligation to respond when offered something in return.}
+
+\new{\subsection{The Lottery Framing Null Effect?}}
+
+If a lottery incentive is offered, it may not matter if respondents are offered multiple chances to win a smaller gift or a single chance to win a larger gift.  In this experiment, response was the same for both – so neither proposition motivated more respondents than the other.  Therefore, the expected value of an incentive (i.e., dollars multiplied by probability of winning) may be more important than the framing of the proposition.  If so, larger or different incentives than the ones we tested might produce different results.
+
+\new{\subsection{Cost-Effectiveness Considerations?}}
+
+It is interesting to consider the cost per added complete of offering the incentives in this experiment.  We achieved a 30.6\% response rate in the unincented sample – so, without an incentive, we would have expected to obtain 1,500 respondents from the 4,903 invitations we sent to the two incented samples.  In fact, we obtained 1,592 respondents from the two incented samples – 92 more than expected without incentives.  The 92 extra respondents cost us \$1000 in incentives, or \$10.87 each.  This is a remarkable price to pay for people who compromised the representativeness of the participating sample.
+
+\new{\subsection{Limitations and Future Directions?}}
+
+Because this experiment was conducted exclusively with degree holders from Stanford University, the participants were no doubt more affluent than many survey populations are (and thus perhaps less motivated by modest financial incentives).  Likewise, they are more highly educated than many survey populations, and some response effects are less pronounced among highly educated respondents (Narayan and Krosnick 1996).  So lottery incentives may result in greater differences with different populations.  We look forward to future studies of this sort exploring these issues further.
+
+\new{\subsection{Implications for Practice?}}
+
+In the meantime, our findings reinforce the growing chorus of voices in the survey profession saying that higher response rates are not always indicators of increased survey accuracy, and expenditure of funds to increase response rates is not always wise.
+
+
+% ============================================
+% REVIEWER RESPONSE PLANS
+% ============================================
+% NOTE: This section contains our plans for addressing reviewer comments.
+% Remove before final submission.
+
+\section*{Reviewer Comments}
+\addcontentsline{toc}{section}{Response Plans for Reviewer Comments}
+
+\textit{This section outlines our plans for addressing each reviewer comment. Text in blue indicates planned additions or revisions; text in red indicates items requiring further data or team discussion.}
+
+\subsection*{Reviewer 1 Comments}
+
+\subsubsection*{R1.1: Heerwegh (2006) finding on females}
+
+\textbf{Comment:} ``A similar finding about females was found with a student sample by Heerwegh (2006), suggesting that the current study may be making a contribution to a broader understanding of incentive effects.''
+
+\subsubsection*{R1.2: Survey content not described}
+
+\textbf{Comment:} ``We are not told what the Stanford survey was about. It is worth seeing whether any items in the survey proper were related to the three groups.''
+
+\plan{Add paragraph in Methods describing survey content. Mention items related to:}
+\begin{itemize}
+    \item Affiliation strength with Stanford
+    \item Donor motivations or giving history
+    \item Alumni Association engagement
+\end{itemize}
+
+\subsubsection*{R1.3: ``Survey accuracy'' vs. weighting}
+
+\textbf{Comment:} ``While the outcomes do show that incentives tend to make over-represented groups even more over-represented, this is not the same as `survey accuracy' claimed in the title. A simple weighting to known population characteristics should remedy this.''
+
+\subsubsection*{R1.4: Qualitative research suggestion}
+
+\textbf{Comment:} ``Further research, possibly qualitative, into how respondents view incentives and what they signal to them about the survey, would be worthwhile.''
+
+\subsubsection*{R1.5: Guidance for future researchers}
+
+\textbf{Comment:} ``The discussion could be expanded... to giving future researchers guidance about what to take into account when deciding whether or not to use lottery incentives.''
+
+\subsubsection*{R1.6: Repetition and figures}
+
+\textbf{Comment:} ``There is considerable repetition in the survey results which could be more succinctly reported. Figures 1 to 4 appear unnecessary.''
+
+\subsubsection*{R1.7: Table labeling and regression results}
+
+\textbf{Comment:} ``The first table is not labeled. In `Table 1' the actual logistic regression result should be listed.''
+
+\subsubsection*{R1.8: Incomplete references}
+
+\textbf{Comment:} ``Some references are incomplete - Edwards et al., Sheehan and Whiteman et al. Some references lack the given names of authors.''
+
+\subsection*{Reviewer 2 Comments}
+
+\subsubsection*{R2.1: Need for general population/varied samples}
+
+\textbf{Comment:} ``A more comprehensive analysis that accounts for results in general population or more varied samples would provide greater insight into this topic.''
+
+\subsubsection*{R2.2: Sources of response to incentives}
+
+\textbf{Comment:} ``More in-depth, comparative analyses that examined the sources of response to incentives - why people respond to incentives - would be a worthwhile addition.''
+
+\subsection*{Reviewer 3 Comments}
+
+\subsubsection*{R3.1: Imprecise terminology (sample composition)}
+
+\textbf{Comment:} ``Incentives can potentially impact the distribution of the responses, they have no impact on the sample composition.''
+
+\subsubsection*{R3.2: ``Incentives'' vs. ``lotteries'' terminology}
+
+\textbf{Comment:} ``Although the paper opens and closes by talking about the impact of lotteries on response rates, throughout the body of the paper it talks about the `impact of incentives' on response rates... this is not a paper about the impact of incentives on response rates but... the use of lotteries as incentives.''
+
+\subsubsection*{R3.3: Questionnaire content and topic salience}
+
+\textbf{Comment:} ``It would have been useful to know something more about the topics covered in the questionnaire.''
+
+\todo{TEAM: Provide survey instrument details for Methods section.}
+
+\subsubsection*{R3.4: Random assignment procedure and stratification}
+
+\textbf{Comment:} ``There is no discussion about how the random assignment was carried out. It appears that the sample was not stratified by any of the key variables prior to random assignment.''
+
+\subsubsection*{R3.5: Table issues---combined groups, missing Ns}
+
+\textbf{Comment:} ``The initial tables did not report the response rate differences between these three groups, but, rather, an overall response rate that combined all three groups... none of these tables, except one, gave any N's, only percents.''
+
+\subsubsection*{R3.6: Figure 4 clarity}
+
+\textbf{Comment:} ``I found Figure 4... difficult to read. It wasn't clear what was being compared to what. Instead of using a bar graph, a table with four columns might have been clearer.''
+
+
+\subsubsection*{R3.7: No discussion of why null framing effect}
+
+\textbf{Comment:} ``Although the author states that this contradicts earlier research, there is no discussion on why there is no difference between the two or why the impact was not greater. Was the lottery prize too small? Was it appropriate for the task at hand?''
+
+% APPENDIX FOR DETAILED LITERATURE TABLES?
 
 \end{document}
