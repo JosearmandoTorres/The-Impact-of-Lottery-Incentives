@@ -1,0 +1,24 @@
+% XXXX_tab2.tex  —  Bivariate OLS regression: incentive effect on survey response
+% Fully compliant with SRM LaTeX template (srm_main.tex / XXXX_tab2.tex conventions)
+
+\begin{table}
+  \begin{threeparttable}[b]
+    \caption{Bivariate OLS regression: incentive effect on survey response}
+    \begin{tabular}{l .{4} .{4} .{3}}
+      \toprule
+       & \mc{$b$} & \mc{SE} & \mc{$p$} \\
+      \midrule
+      Intercept     & 0.3062\tnote{**} & 0.0095 & 0.000 \\
+      Any incentive & 0.0185           & 0.0116 & 0.109 \\[3pt]
+      \IE $R^{2}$ & \multicolumn{3}{c}{0.0004} \\
+      \IE $N$     & \multicolumn{3}{c}{7,333} \\ \bottomrule
+    \end{tabular}
+    \vspace{.5em}
+    \begin{tablenotes}\small
+    \item Outcome: survey response (0/1). Reference category: no incentive.
+    \item [$\dagger$] $p < 0.10$
+    \item [*] $p < 0.05$
+    \item [**] $p < 0.01$
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}

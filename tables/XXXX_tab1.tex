@@ -1,0 +1,35 @@
+% XXXX_tab1.tex  —  Response rates by subgroup and treatment condition
+% Fully compliant with SRM LaTeX template (srm_main.tex / XXXX_tab2.tex conventions)
+% Percentages rounded to integers per SRM rules; % as column header, not per-cell.
+
+\begin{table}
+  \begin{threeparttable}[b]
+    \caption{Response rates by demographic subgroup and treatment condition}
+    \begin{tabular}{l .{0} .{0} .{0} .{0} .{0} .{0}}
+      \toprule
+       & \multicolumn{2}{c}{No incentive}
+       & \multicolumn{2}{c}{5$\times$\$100}
+       & \multicolumn{2}{c}{1$\times$\$500} \\
+      \cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}
+       & \mc{$N$} & \mc{\%} & \mc{$N$} & \mc{\%} & \mc{$N$} & \mc{\%} \\
+      \midrule
+      \multicolumn{7}{l}{\textit{Sex}} \\
+      \IE Female        &   897 & 34 &   932 & 37 &   891 & 37 \\
+      \IE Male          & 1,533 & 29 & 1,517 & 30 & 1,563 & 30 \\[3pt]
+      \multicolumn{7}{l}{\textit{Donor status}} \\
+      \IE Donor         &   929 & 38 &   917 & 43 &   948 & 41 \\
+      \IE Non-donor     & 1,501 & 26 & 1,532 & 27 & 1,506 & 27 \\[3pt]
+      \multicolumn{7}{l}{\textit{SAA membership}} \\
+      \IE Non-member    & 1,367 & 35 & 1,343 & 38 & 1,330 & 36 \\
+      \IE SAA member    & 1,063 & 25 & 1,106 & 27 & 1,124 & 28 \\[3pt]
+      \multicolumn{7}{l}{\textit{Degree level}} \\
+      \IE Graduate only & 1,011 & 26 & 1,082 & 29 & 1,037 & 28 \\
+      \IE Undergraduate & 1,419 & 34 & 1,367 & 35 & 1,417 & 36 \\ \bottomrule
+    \end{tabular}
+    \vspace{.5em}
+    \begin{tablenotes}\small
+    \item \% is the response rate (percentage of invited alumni who completed
+      the survey) within each subgroup-condition cell.
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}

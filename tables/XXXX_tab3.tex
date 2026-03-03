@@ -1,0 +1,54 @@
+% XXXX_tab3.tex  —  OLS regression: overall incentive effect on response
+% Fully compliant with SRM LaTeX template (srm_main.tex / XXXX_tab2.tex conventions)
+
+\begin{table}
+  \begin{threeparttable}[b]
+    \caption{OLS regression predicting survey response}
+    \begin{tabular}{l .{3} .{3} .{3} .{3}}
+      \toprule
+       & \multicolumn{2}{c}{Model 1} & \multicolumn{2}{c}{Model 2} \\
+      \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+       & \mc{$b$} & \mc{SE} & \mc{$b$} & \mc{SE} \\
+      \midrule
+      \multicolumn{5}{l}{\textit{Treatment}} \\
+      \IE Any incentive & 0.020\tnote{$\dagger$} & 0.011 & -0.034 & 0.040 \\[3pt]
+      \multicolumn{5}{l}{\textit{Demographic controls}} \\
+      \IE Female        & 0.058\tnote{**} & 0.011 & 0.040\tnote{*}  & 0.020 \\
+      \IE Donor         & 0.120\tnote{**} & 0.011 & 0.099\tnote{**} & 0.020 \\
+      \IE SAA member    & 0.067\tnote{**} & 0.012 & 0.071\tnote{**} & 0.020 \\
+      \IE Undergraduate & 0.025\tnote{*}  & 0.012 & 0.028           & 0.020 \\[3pt]
+      \multicolumn{5}{l}{\textit{Graduation year (Ref.\ categ.: 1955--1969)}} \\
+      \IE 2000--2007 & -0.002           & 0.019 & -0.013           & 0.032 \\
+      \IE 1990--1999 & -0.050\tnote{**} & 0.017 & -0.069\tnote{*}  & 0.030 \\
+      \IE 1980--1989 & -0.031\tnote{$\dagger$} & 0.018 & -0.049   & 0.031 \\
+      \IE 1970--1979 & -0.008           & 0.019 &  0.001           & 0.032 \\[3pt]
+      \multicolumn{5}{l}{\textit{Region (Ref.\ categ.: SF Bay Area)}} \\
+      \IE Other active & 0.024\tnote{*} & 0.012 & -0.001 & 0.021 \\
+      \IE Non-active   & 0.037\tnote{*} & 0.016 &  0.018 & 0.027 \\[3pt]
+      \multicolumn{5}{l}{\textit{Treatment $\times$ covariate interactions}} \\
+      \IE Any incentive $\times$ female        & \mc{---} & & 0.027  & 0.024 \\
+      \IE Any incentive $\times$ donor         & \mc{---} & & 0.031  & 0.024 \\
+      \IE Any incentive $\times$ SAA member    & \mc{---} & & -0.006 & 0.025 \\
+      \IE Any incentive $\times$ undergraduate & \mc{---} & & -0.005 & 0.025 \\
+      \IE Any incentive $\times$ 2000--2007    & \mc{---} & &  0.019 & 0.039 \\
+      \IE Any incentive $\times$ 1990--1999    & \mc{---} & &  0.029 & 0.037 \\
+      \IE Any incentive $\times$ 1980--1989    & \mc{---} & &  0.028 & 0.038 \\
+      \IE Any incentive $\times$ 1970--1979    & \mc{---} & & -0.013 & 0.039 \\
+      \IE Any incentive $\times$ other active  & \mc{---} & &  0.039 & 0.026 \\
+      \IE Any incentive $\times$ non-active    & \mc{---} & &  0.030 & 0.034 \\ \midrule
+      \IE Intercept & 0.189\tnote{**} & 0.021 & 0.224\tnote{**} & 0.033 \\[3pt]
+      \IE $R^{2}$   & \multicolumn{2}{c}{0.036} & \multicolumn{2}{c}{0.037} \\
+      \IE $N$       & \multicolumn{2}{c}{7,333} & \multicolumn{2}{c}{7,333} \\ \bottomrule
+    \end{tabular}
+    \vspace{.5em}
+    \begin{tablenotes}\small
+    \item Outcome: survey response (0/1). Reference categories: no incentive, male,
+      non-donor, non-member, graduate only, graduation year 1955--1969, SF Bay Area.
+      Model 2 adds treatment $\times$ covariate interactions.
+      --- = term not included in model.
+    \item [$\dagger$] $p < 0.10$
+    \item [*] $p < 0.05$
+    \item [**] $p < 0.01$
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}
