@@ -1,0 +1,33 @@
+% XXXX_tab5.tex  —  Two-proportion z-tests by demographic subgroup
+% Fully compliant with SRM LaTeX template conventions.
+
+\begin{table}
+  \begin{threeparttable}[b]
+    \caption{Two-proportion $z$-tests: no-incentive vs.\ pooled-incentive response rates by subgroup}
+    \begin{tabular}{l .{3} .{3}}
+      \toprule
+       & \mc{$\chi^{2}$} & \mc{$p$} \\
+      \midrule
+      \multicolumn{3}{l}{\textit{Sex}} \\
+      \IE Male   & 0.377 & 0.539 \\
+      \IE Female & 3.147 & 0.076\tnote{$\dagger$} \\[3pt]
+      \multicolumn{3}{l}{\textit{Donor status}} \\
+      \IE Non-donor & 0.460 & 0.497 \\
+      \IE Donor     & 2.964 & 0.085\tnote{$\dagger$} \\[3pt]
+      \multicolumn{3}{l}{\textit{SAA membership}} \\
+      \IE Non-member & 1.133 & 0.287 \\
+      \IE SAA member & 2.208 & 0.137 \\[3pt]
+      \multicolumn{3}{l}{\textit{Degree level}} \\
+      \IE Graduate only & 1.374 & 0.241 \\
+      \IE Undergraduate & 1.566 & 0.211 \\ \bottomrule
+    \end{tabular}
+    \vspace{.5em}
+    \begin{tablenotes}\small
+    \item Tests compare response rates between no-incentive and
+      pooled-incentive conditions within each subgroup.
+    \item [$\dagger$] $p < 0.10$
+    \item [*] $p < 0.05$
+    \item [**] $p < 0.01$
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}

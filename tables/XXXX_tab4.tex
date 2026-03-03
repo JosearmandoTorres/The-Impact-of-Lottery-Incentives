@@ -1,0 +1,54 @@
+% XXXX_tab4.tex  —  OLS regression: lottery framing effect on response
+% Fully compliant with SRM LaTeX template (srm_main.tex / XXXX_tab2.tex conventions)
+
+\begin{table}
+  \begin{threeparttable}[b]
+    \caption{OLS regression comparing five \$100 prizes to one \$500 prize}
+    \begin{tabular}{l .{3} .{3} .{3} .{3}}
+      \toprule
+       & \multicolumn{2}{c}{Model 1} & \multicolumn{2}{c}{Model 2} \\
+      \cmidrule(lr){2-3}\cmidrule(lr){4-5}
+       & \mc{$b$} & \mc{SE} & \mc{$b$} & \mc{SE} \\
+      \midrule
+      \multicolumn{5}{l}{\textit{Treatment}} \\
+      \IE One \$500 & -0.003 & 0.013 & 0.010 & 0.048 \\[3pt]
+      \multicolumn{5}{l}{\textit{Demographic controls}} \\
+      \IE Female        & 0.067\tnote{**} & 0.014 & 0.073\tnote{**} & 0.020 \\
+      \IE Donor         & 0.130\tnote{**} & 0.014 & 0.141\tnote{**} & 0.020 \\
+      \IE SAA member    & 0.065\tnote{**} & 0.014 & 0.082\tnote{**} & 0.020 \\
+      \IE Undergraduate & 0.023           & 0.014 & 0.003           & 0.020 \\[3pt]
+      \multicolumn{5}{l}{\textit{Graduation year (Ref.\ categ.: 1955--1969)}} \\
+      \IE 2000--2007 &  0.005                    & 0.023 & -0.009 & 0.033 \\
+      \IE 1990--1999 & -0.040\tnote{$\dagger$}   & 0.021 & -0.047 & 0.031 \\
+      \IE 1980--1989 & -0.021                    & 0.022 & -0.007 & 0.032 \\
+      \IE 1970--1979 & -0.012                    & 0.023 &  0.010 & 0.033 \\[3pt]
+      \multicolumn{5}{l}{\textit{Region (Ref.\ categ.: SF Bay Area)}} \\
+      \IE Other active & 0.038\tnote{**} & 0.015 & 0.030           & 0.022 \\
+      \IE Non-active   & 0.048\tnote{**} & 0.020 & 0.063\tnote{*}  & 0.027 \\[3pt]
+      \multicolumn{5}{l}{\textit{Treatment $\times$ covariate interactions}} \\
+      \IE One \$500 $\times$ female        & \mc{---} & & -0.011 & 0.028 \\
+      \IE One \$500 $\times$ donor         & \mc{---} & & -0.021 & 0.028 \\
+      \IE One \$500 $\times$ SAA member    & \mc{---} & & -0.033 & 0.029 \\
+      \IE One \$500 $\times$ undergraduate & \mc{---} & &  0.040 & 0.029 \\
+      \IE One \$500 $\times$ 2000--2007    & \mc{---} & &  0.027 & 0.046 \\
+      \IE One \$500 $\times$ 1990--1999    & \mc{---} & &  0.013 & 0.043 \\
+      \IE One \$500 $\times$ 1980--1989    & \mc{---} & & -0.030 & 0.045 \\
+      \IE One \$500 $\times$ 1970--1979    & \mc{---} & & -0.046 & 0.046 \\
+      \IE One \$500 $\times$ other active  & \mc{---} & &  0.014 & 0.030 \\
+      \IE One \$500 $\times$ non-active    & \mc{---} & & -0.033 & 0.039 \\ \midrule
+      \IE Intercept & 0.191\tnote{**} & 0.025 & 0.186\tnote{**} & 0.034 \\[3pt]
+      \IE $R^{2}$   & \multicolumn{2}{c}{0.038} & \multicolumn{2}{c}{0.040} \\
+      \IE $N$       & \multicolumn{2}{c}{4,903} & \multicolumn{2}{c}{4,903} \\ \bottomrule
+    \end{tabular}
+    \vspace{.5em}
+    \begin{tablenotes}\small
+    \item Outcome: survey response (0/1). Reference categories: five \$100 prizes, male,
+      non-donor, non-member, graduate only, graduation year 1955--1969, SF Bay Area.
+      Model 2 adds treatment $\times$ covariate interactions.
+      --- = term not included in model.
+    \item [$\dagger$] $p < 0.10$
+    \item [*] $p < 0.05$
+    \item [**] $p < 0.01$
+    \end{tablenotes}
+  \end{threeparttable}
+\end{table}

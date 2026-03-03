@@ -1,0 +1,775 @@
+% XXXX_artcl.tex
+% Article body for SRM submission.
+% Figures in: graphs/
+% Tables in:  tables/
+
+% ============================================
+\section{Introduction}
+% ============================================
+
+Survey researchers have long been attentive to response rates \parencite{steeh1981},
+treating them as an important indicator of survey quality
+\parencite{backstrom1963, babbie1990, aday1996, rea1997}.
+But the more fundamental concern is representativeness. Certain groups tend to respond
+at lower rates: men refuse more often than women, and lower-income households are less
+likely to participate \parencite{groves2006, bee2024}. Other attributes such as
+socioeconomic status and racial minority status show variable effects depending on survey
+mode, topic, and sponsor \parencite{groves2006}. When these participation gaps correlate
+with the variables a survey aims to measure, nonresponse bias compromises accuracy
+regardless of the overall response rate.
+
+This problem has become more pressing as response rates have declined across all modes:
+mail \parencite{casro1982}, telephone \parencite{curtin2005}, and online
+\parencite{sheehan2001}. Researchers have experimented with survey length, advance
+notifications, personalization, follow-up protocols, and refusal conversion strategies
+\parencite{brick2013}. Among these approaches, incentives remain one of the most studied
+and debated tools for increasing participation \parencite{singer2013}.
+
+Two theoretical frameworks help explain why incentives might motivate survey
+participation. The first is \textcite{cialdini1984}'s principle of reciprocity: when
+someone gives us something, we feel psychologically obligated to give something back.
+This obligation can be triggered by gifts, favors, or perceived concessions, and it
+operates even when the initial offering was unsolicited. In the survey context, an
+incentive represents a gift from the sponsor, creating a sense of debt that respondents
+may settle through participation.
+
+The second framework is leverage-saliency theory \parencite{groves2000}. This theory
+proposes that different attributes of a survey request carry different ``leverage'' for
+different people. Whether an attribute influences behavior depends on whether it becomes
+salient during the request. Incentives, on this account, work by increasing the salience
+of potential rewards for individuals who assign positive leverage to monetary gain. This
+explains the inconsistent findings in the incentives literature: effectiveness depends on
+both individual predispositions and what the survey request emphasizes.
+
+Both frameworks suggest that incentives should increase participation among people who
+would otherwise lack sufficient motivation to respond. If true, incentives could improve
+sample representativeness by drawing in underrepresented groups. But when incentives take
+the form of lotteries, additional psychological factors come into play.
+
+Lottery incentives are appealing to researchers because they offer the possibility of
+meaningful prizes at low per-respondent cost. But lotteries introduce psychological
+complexity. When a researcher has a fixed budget, they can structure a lottery with many
+winners of smaller prizes or fewer winners of larger prizes. The expected value can be
+held constant, but the two framings may differ in their psychological appeal.
+
+\textcite{kahneman1979}'s prospect theory offers insight into how people evaluate such
+gambles. Two findings are relevant. First, people overweight small probabilities, which
+helps explain the general appeal of lotteries: a tiny chance of a gain receives more
+psychological weight than its objective probability warrants. Second, the value function
+for gains is concave, meaning that each additional dollar matters less than the one
+before it. A \$500 prize is not experienced as five times more valuable than a \$100
+prize.
+
+Applied to survey lotteries, these principles suggest that five chances to win \$100 may
+be more motivating than one chance to win \$500. Five chances feels like better odds, and
+the concave value function compresses the perceived difference between the two prize
+amounts. The alternative prediction is that prize magnitude dominates: \$500 is a more
+attention-grabbing number, and respondents may focus on what they could win rather than
+their chances of winning. A third possibility is that respondents approximate expected
+value despite uncertainty, in which case the two framings should perform equally. This
+calculation is complicated by the fact that respondents do not know how many others will
+enter the lottery.
+
+Prior studies of lottery framing in surveys have produced mixed results. Surveys
+conducted within institutional populations present a particular puzzle for incentive
+research. People with strong ties to the sponsoring institution are likely already
+motivated to participate. Donors, association members, and those with deeper institutional
+involvement may respond at high rates without any incentive. For these individuals,
+incentives may add little.
+
+By contrast, those with weaker institutional ties may lack intrinsic motivation to
+respond. According to leverage-saliency theory, incentives should matter most for this
+group, because the monetary offer provides leverage that the sponsor relationship does
+not. If this is correct, incentives would improve sample representativeness by increasing
+participation among the weakly affiliated.
+
+But there is an alternative possibility. Cialdini's reciprocity principle suggests that
+incentives might actually amplify participation among the already-engaged. Donors, for
+instance, have given to the institution. When the institution offers something in return,
+donors may feel the reciprocity norm particularly strongly. If so, incentives could
+increase response most among those who already respond at high rates, worsening rather
+than improving representativeness.
+
+This study examines lottery incentives in an online survey of Stanford University alumni.
+We randomly assigned potential respondents to one of three conditions: no incentive, five
+chances to win \$100, or one chance to win \$500. This design allows us to test three
+questions: whether lottery incentives increase response rates relative to no incentive,
+whether the framing of the lottery affects response, and whether incentive effects vary
+across subgroups defined by institutional affiliation.
+
+We test the following hypotheses:
+
+\bci
+\item Hypothesis 1: Lottery incentives will increase overall response rates compared to
+  no incentive.
+\item Hypothesis 2: The framing with more chances to win (5~$\times$~\$100) will produce
+  higher response rates than the framing with a larger single prize (1~$\times$~\$500).
+\item Hypothesis 3: Incentive effects will be larger among weakly affiliated subgroups
+  (non-donors, non-members, graduate-only alumni), thereby improving sample
+  representativeness.
+\eci
+
+These hypotheses follow logically from theory and prior research. Whether they hold in
+practice is an empirical question with implications for how survey researchers should
+deploy limited incentive budgets.
+
+
+% ============================================
+\section{Literature Review}
+% ============================================
+
+The existing literature on lottery incentives presents a puzzle. Lotteries offer a
+cost-effective alternative to guaranteed payments, yet experimental studies reveal
+substantial heterogeneity in their effectiveness. Some find large positive effects;
+others find nothing at all. This review examines the sources of this heterogeneity, with
+particular attention to the understudied question of whether lottery incentives affect not
+just response rates but also the composition of the responding sample.
+
+\subsection{Population Characteristics and Lottery Effectiveness}
+
+The most consistent pattern in the literature is that lottery effectiveness varies by
+population. Student and younger populations show reliable positive effects.
+\textcite{laguilles2011} and \textcite{larose2014} found significant increases among
+college students, as did \textcite{sanchezfernandez2010} and \textcite{porter2003}.
+\textcite{martinson2000} similarly found that younger respondents were more responsive to
+lottery incentives.
+
+General population surveys also tend to show positive effects. \textcite{olsen2012},
+\textcite{johansson1997}, \textcite{pedersen2016}, \textcite{woodward1985}, and
+\textcite{marrett1992} all documented significant increases in response rates. Early
+studies established the basic finding: \textcite{mccool1991} found a 12 percentage point
+increase with a \$50 savings bond lottery, \textcite{blythe1986} observed an 11
+percentage point gain among social workers, and \textcite{balakrishnan1992} reported a
+6.8 point increase in a large consumer survey. International replications suggest these
+effects generalize beyond U.S.\ samples \parencite{angur1995, johansson1997, conn2024}.
+
+The pattern reverses for high-income, highly educated, and professional populations. Null
+findings are common in surveys of physicians and healthcare professionals
+\parencite{moses2004, cottrell2015, gravagubins2008, halpern2011, ulrich2005,
+dykema2011, gallagher2001, mclaren2000, so2018}. Surveys of older adults show similar
+null results \parencite{finsen2006, gjostein2016, roberts2000}, as do surveys of
+professionals and executives \parencite{lorenzi1988, coryn2020, golden1981}.
+\textcite{warriner1996}, \textcite{harris2008}, \textcite{lipps2010}, and
+\textcite{brennan1993} found no significant differences between lottery and control
+conditions. \textcite{mortagy1985} famously characterized their lottery condition as ``a
+useless raffle,'' finding identical response rates (68.1\%) in both groups.
+
+Most relevant to the present study, \textcite{denton1991} found lottery incentives
+ineffective among college alumni. This population shares key characteristics with
+Stanford alumni: high education, relative affluence, and an existing relationship with
+the survey sponsor. \textcite{zhang2017} provides a potential explanation, finding larger
+lottery effects among lower-income respondents. For affluent populations, the expected
+value of a modest lottery may fall below the threshold required to motivate behavior
+change.
+
+Several studies have found that small prepaid cash incentives significantly outperform
+much larger lottery prizes. \textcite{larson2003} found that a \$1 prepaid incentive
+outperformed a \$600 lottery, and \textcite{lorenzi1988} found lottery incentives
+performed significantly worse than \$1 prepaid cash among business executives. These
+findings suggest that the certainty of a small reward may be more motivating than the
+possibility of a large one, particularly for populations that do not need the money.
+
+Recent meta-analytic evidence confirms the overall pattern. \textcite{goritz2006} found
+an odds ratio of 1.19 for lottery incentives in web surveys, and
+\textcite{abdelazeem2023} reported a risk ratio of 1.12 for lotteries compared to 1.25
+for cash. Lotteries work on average, but with smaller and more variable effects than
+guaranteed payments.
+
+\subsection{Prize Structure and Framing Effects}
+
+When researchers have a fixed incentive budget, they face a choice: offer many chances to
+win smaller prizes, or fewer chances to win larger prizes. The expected value can be held
+constant, but the psychological appeal may differ. Prospect theory suggests that people
+overweight small probabilities, which could favor either framing depending on whether
+respondents focus on the number of chances or the prize magnitude.
+
+The evidence on prize structure is mixed. \textcite{deutskens2004} found that lotteries
+with smaller prizes and higher probability of winning were most effective. This finding
+aligns with the prediction that multiple chances feel psychologically better than a single
+long-shot opportunity.
+
+Other studies find no significant differences across lottery amounts.
+\textcite{leung2002} and \textcite{halpern2011} found that varying the prize magnitude
+had no effect on response rates. Some evidence suggests larger prizes are more effective
+\parencite{hubbard1988, gajic2012}, but this pattern is inconsistent.
+
+Lottery type and timing also matter. Prepaid scratch tickets appear to outperform
+promised lottery entries \parencite{olsen2012, guo2016}, possibly because their
+immediacy and tangibility increase perceived value. \textcite{tuten2004} found that
+immediate notification of lottery results outperformed delayed notification.
+Pre-incentive lotteries (unconditional entry) may be more effective than post-incentive
+lotteries (conditional on completion) \parencite{sanchezfernandez2010}.
+
+Interactions with survey characteristics add further complexity. \textcite{spry1989}
+found lottery incentives helped only when combined with a short questionnaire, suggesting
+that incentive effectiveness depends on respondent burden. \textcite{cobanoglu2003} found
+that lottery combined with other incentive types was effective, while lottery alone was
+not.
+
+\subsection{The Understudied Question: Sample Composition}
+
+Most studies of lottery incentives focus exclusively on response rates. A higher response
+rate is treated as a success. This framing ignores a critical question: do incentives
+change \emph{who} responds? If incentives motivate participation uniformly across the
+population, higher response rates translate directly into better data. If incentives
+disproportionately attract certain subgroups, they may increase response rates while
+simultaneously reducing representativeness. A survey with a higher response rate could
+have more nonresponse bias than one with a lower response rate, depending on which
+additional respondents the incentive recruits.
+
+Several studies provide indirect evidence of differential effects. \textcite{laguilles2011}
+observed that males showed larger response increases for technology prizes while females
+responded more to dining-related prizes. \textcite{zhang2017} found larger lottery
+effects among low-income staff compared to higher-income staff. These patterns suggest
+incentives do not operate uniformly across demographic groups.
+
+A few studies have examined composition directly. \textcite{robertson2005} found that a
+lottery incentive improved physician response rates and examined representativeness of
+responders versus nonresponders. \textcite{petrolia2009} found that incentives altered
+the education composition of their sample. \textcite{goyder1994} found that prepaid
+incentives yielded a more representative sample overall.
+
+These studies raise the possibility that incentives could improve representativeness by
+drawing in groups that would otherwise be underrepresented. Lower-income respondents, for
+whom the expected value of a lottery represents a larger relative payoff, might be
+particularly motivated by financial incentives. If low-income individuals are
+underrepresented at baseline, incentives could reduce nonresponse bias.
+
+The alternative possibility has received less empirical attention. Incentives might
+increase response most among groups already inclined to participate. In institutional
+populations like alumni, donors and active members may feel the reciprocity norm
+particularly strongly: they have given to the institution, and now the institution offers
+to give something back. If incentives disproportionately motivate the already-engaged,
+they would widen existing gaps in response propensity, increasing nonresponse bias
+despite increasing the overall response rate.
+
+
+% ============================================
+\section{Methods}
+% ============================================
+
+\subsection{Sample and Assignment}
+
+The population was defined as people who received degrees from Stanford University
+between 1955 and 2007, who live in the continental USA or Canada, and for whom Stanford
+had an e-mail address. Stanford employees and their spouses, current and former
+University Trustees, current and former members of the Stanford Alumni Association Board
+of Directors, and those who had requested to receive no e-mail were excluded from the
+study.
+
+Alumni were assigned to experimental conditions using systematic sampling. After removing
+those who had requested to receive no surveys ($N = 2{,}499$, $2{,}513$, and $2{,}510$
+from the three groups), invitations were distributed sequentially in a 1-2-3-1-2-3
+pattern, yielding three groups of alumni. Each individual was e-mailed a short invitation
+with a link to participate in the survey. The invitation was the same for all---except
+for the subject headers and the passages describing the incentive offered for their
+participation.
+
+\bci
+\item Sample 1 was offered no incentive to participate in the survey.
+\item Sample 2 was informed that five randomly selected respondents would each win a
+  \$100 Visa gift card.
+\item Sample 3 was informed that one randomly selected respondent would win a \$500 Visa
+  gift card.
+\eci
+
+The invitations were e-mailed on June 24, 2008, and three reminders were e-mailed to
+non-respondents at one-week intervals before the survey was taken off the web on July 20,
+2008. A few invitations bounced back as undeliverable ($N = 22$, $29$, and $24$,
+respectively), yielding final participating samples of 2,430, 2,449, and 2,454. A
+balance check confirmed that the three experimental groups did not differ significantly
+on any measured demographic characteristic (all $p > 0.16$), validating the
+effectiveness of the systematic assignment procedure.
+
+\subsection{Measures}
+
+Names and demographic data came from Stanford's alumni database. The following
+characteristics served as covariates in the response rate models, capturing the
+dimensions along which response propensity varied in this population. Reference
+categories are noted in parentheses.
+
+\emph{Sex.} Male (reference) or female.
+
+\emph{Donor status.} Whether the alumnus had donated to Stanford since January 1, 2007
+(reference: non-donor).
+
+\emph{SAA membership.} Whether the alumnus was a member of the Stanford Alumni
+Association at the time of the survey (reference: non-member).
+
+\emph{Degree level.} Alumni whose only degree from Stanford is a graduate degree
+(``graduate-only,'' reference) versus those who hold an undergraduate degree from
+Stanford (``undergraduate''). Alumni who have both undergraduate and graduate degrees
+from Stanford are classified as undergraduate alumni.
+
+\emph{Graduation year cohort.} Graduation years grouped into five cohorts: 1955--1969
+(reference), 1970--1979, 1980--1989, 1990--1999, and 2000--2007. Year of undergraduate
+graduation is recorded for alumni who have both undergraduate and graduate degrees.
+
+\emph{Geographic region.} San Francisco Bay Area (reference), other active alumni
+regions, or non-active regions.
+
+The response rate analyses (Analyses 1--3) draw on a dataset covering all 7,333 sample
+members, which includes treatment assignment, response status, and the demographic
+characteristics listed above. Age and race/ethnicity were not available in this file.
+Among the 2,342 respondents, a separate line-item file records responses to each survey
+item along with self-reported age and race/ethnicity. Age (D1) was recorded as a
+continuous measure in years (range: 21--88). Race/ethnicity (D2) was recorded using
+seven categories: White/Caucasian (reference), Asian/Pacific Islander/Indian,
+Latino/Hispanic, African-American/Black, Native American/American Indian, Mixed
+ethnicity/multiracial/other, and Prefer not to answer. These two variables are used as
+additional controls in the data quality analyses (Analysis 4) but are not available for
+the full sample.
+
+\emph{Survey instrument.} The survey contained two batteries of attitudinal items. The
+Q1 battery comprised 26 items asking alumni to rate how much each activity made them feel
+connected to Stanford on a six-point scale (1 = a great deal, 2 = a lot, 3 = a moderate
+amount, 4 = only a little, 5 = not at all, 6 = not applicable). The Q2 battery comprised
+16 items asking alumni to rate the extent to which each alumni service met their needs or
+interests (1 = fully, 2 = mostly, 3 = partly, 4 = only a little, 5 = not at all, 6 = not
+applicable). For response-quality analyses, ``not applicable'' responses (6) were treated
+as missing, as they represent inapplicability rather than a position on the attitude
+continuum.
+
+\subsection{Analysis Plan}
+
+We conducted four sets of analyses. The estimating equations and full statistical output
+for each are presented in the Analysis section; interpretive findings follow in the
+Results section.
+
+\emph{Analysis 1: Overall incentive effect.} We compared response rates across the three
+experimental conditions using chi-square tests and one-sided tests (Fisher's exact and
+one-sided $z$-test) given our directional hypothesis. We then estimated bivariate and
+multivariate OLS regression models predicting survey response (0/1) as a function of
+treatment assignment and demographic covariates. We conducted joint Wald tests of the
+null hypothesis that $\beta_1 = 0$. The bivariate model takes the form:
+
+\begin{equation}
+  \text{Responded}_i = \beta_0 + \beta_1 \cdot \text{AnyIncentive}_i + \epsilon_i
+\end{equation}
+
+The multivariate model adds the full covariate vector $\mathbf{X}_i$ described in
+Section~3.2:
+
+\begin{equation}
+  \text{Responded}_i = \beta_0 + \beta_1 \cdot \text{AnyIncentive}_i +
+  \mathbf{X}_i'\boldsymbol{\gamma} + \epsilon_i
+\end{equation}
+
+\emph{Analysis 2: Incentive framing.} To test whether lottery structure matters when
+expected value is held constant, we restricted the sample to the two incentive conditions
+(excluding the no-incentive control) and coded the treatment variable as 1 = one \$500
+prize, 0 = five \$100 prizes (reference). We first compared raw response rates via
+chi-square test:
+
+\begin{equation}
+  \text{Responded}_i = \beta_0 + \beta_1 \cdot \text{One500}_i + \epsilon_i
+\end{equation}
+
+We then estimated multivariate models adding $\mathbf{X}_i$, and tested for
+heterogeneous framing effects by adding treatment-by-covariate interaction terms with
+joint Wald tests:
+
+\begin{equation}
+  \text{Responded}_i = \beta_0 + \beta_1 \cdot \text{One500}_i +
+  \mathbf{X}_i'\boldsymbol{\gamma} + \epsilon_i
+\end{equation}
+
+\emph{Analysis 3: Subgroup effects.} We examined differential incentive effects across
+demographic subgroups through two complementary approaches: two-proportion $z$-tests
+comparing no-incentive and pooled-incentive response rates within each subgroup, and
+interaction models using the full sample with treatment-by-demographic terms and joint
+Wald tests.
+
+\emph{Analysis 4: Data quality.} Among respondents ($N = 2{,}342$: 781 no-incentive,
+1,561 incentive), we assessed response quality using five indicators: (1) item
+nonresponse---percentage of questions left unanswered per respondent, compared via
+$t$-test and multivariate OLS controlling for age and race/ethnicity; (2)
+straight-lining---identical responses across 10 or more Q1 items or 8 or more Q2 items,
+compared via chi-square test; (3) within-person response variance---standard deviation
+across answered items per battery, compared via $t$-test; (4) Mulligan
+non-differentiation scores---a pairwise-difference measure of response uniformity robust
+to scale endpoints \parencite{anand2013}, estimated via $t$-test and multivariate OLS
+controlling for age and race/ethnicity; and (5) response distributions---chi-square tests
+on all 42 survey items comparing response distributions between conditions, with
+Bonferroni--Holm correction for multiple comparisons.
+
+
+% ============================================
+\section{Analysis}
+% ============================================
+
+\subsection{Baseline Response Rates}
+
+A total of 2,342 out of 7,333 alumni participated in the survey, yielding an overall
+response rate of 31.9\%. Response rates varied substantially across demographic and
+affiliation characteristics. Alumni with stronger institutional ties showed markedly
+higher participation: donors responded at 40.6\% compared to 26.5\% among non-donors
+($\chi^2 = 157.86$, $p < 0.001$); SAA members at 36.4\% versus 26.3\% among non-members
+($\chi^2 = 84.59$, $p < 0.001$); and undergraduate alumni at 35.0\% compared to 27.7\%
+among graduate-only alumni ($\chi^2 = 43.79$, $p < 0.001$). Women responded at
+significantly higher rates (35.9\%) than men (29.5\%) ($\chi^2 = 32.00$, $p < 0.001$).
+Among undergraduate alumni, response rates varied by graduation year cohort, with those
+who graduated in the 1970s showing the highest participation (38.3\%) and those in the
+1980s and 1990s showing lower rates (32.6\% and 32.3\%, respectively)
+($\chi^2 = 11.38$, $p < 0.01$).
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{graphs/affiliation-response-rates}
+  \caption{Response rates by donor status, SAA membership, and degree level. Error bars
+    represent 95\% confidence intervals.}
+  \label{fig:response_affiliation}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{graphs/demographics-combined}
+  \caption{Response rates by sex and graduation year cohort (undergraduate alumni only).
+    Error bars represent 95\% confidence intervals.}
+  \label{fig:response_demographics}
+\end{figure}
+
+These patterns are consistent across all three treatment conditions. As shown in
+Table~\ref{tab:subgroup_treatment_rr}, the demographic composition of respondents was
+similar regardless of incentive assignment, reinforcing that the baseline differences in
+response propensity reflect stable characteristics of the population rather than
+artifacts of the experimental conditions.
+
+\input{tables/XXXX_tab1}
+
+\subsection{Analysis 1: Overall Incentive Effect on Response Rates}
+
+Alumni offered any lottery incentive responded at 32.47\%, compared to 30.62\% in the
+no-incentive condition---a raw difference of 1.85 percentage points. A one-sided $z$-test
+yielded $p = 0.055$, a one-tailed Fisher's exact test $p = 0.057$, and a two-sided
+chi-square test $p = 0.109$.
+
+In bivariate OLS models, the estimated incentive effect was 1.85 percentage points
+($b = 0.019$, $\text{SE} = 0.011$, $p = 0.107$). Adding demographic controls increased
+the point estimate slightly to 2.01 percentage points while reducing the $p$-value
+($b = 0.020$, $\text{SE} = 0.011$, $p = 0.076$). This pattern---where controls reduce
+the $p$-value rather than increase it---indicates that the demographic covariates are
+negatively correlated with treatment assignment, increasing statistical precision upon
+their inclusion.
+
+\input{tables/XXXX_tab2}
+
+The strongest predictors in the multivariate model were institutional affiliation
+measures. Donors were 12.0 percentage points more likely to respond than non-donors
+($p < 0.01$); SAA members were 6.7 points more likely than non-members ($p < 0.01$);
+women were 5.8 points more likely than men ($p < 0.01$); and undergraduate alumni were
+2.5 points more likely than graduate-only alumni ($p = 0.033$). Among graduation year
+cohorts, the 1990s cohort showed 4.9 points lower response than the 1955--1969 reference
+cohort ($p = 0.004$). All institutional affiliation effects substantially exceeded the
+incentive effect in magnitude.
+
+\input{tables/XXXX_tab3}
+
+Joint Wald tests failed to reject the null hypothesis that both incentive coefficients
+equal zero ($F = 1.60$, $p = 0.203$). The 91 additional responses generated across the
+two incentive conditions came at a total prize cost of \$1,000, a marginal cost of \$10.99
+per additional respondent.
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{graphs/treatment-response-rates}
+  \caption{Response rates by condition with 95\% confidence intervals. The pooled
+    incentive rate combines both lottery framings.}
+  \label{fig:response_by_condition}
+\end{figure}
+
+\subsection{Analysis 2: Effect of Lottery Structure on Response Rates}
+
+The two incentive conditions---five chances to win \$100 versus one chance to win
+\$500---had identical expected values (\$2.00 per respondent). Empirically, the two
+framings produced virtually identical response rates: 32.58\% for five \$100 prizes
+versus 32.36\% for one \$500 prize, a difference of 0.22 percentage points
+($\chi^2 = 0.03$, $p = 0.864$).
+
+Multivariate OLS models comparing the two incentive conditions directly confirmed this
+null result ($F = 0.04$, $p = 0.836$), with point estimates differing by less than 0.3
+percentage points from the bivariate specification.
+
+\input{tables/XXXX_tab4}
+
+Interaction models testing heterogeneous framing effects across demographic subgroups
+found no individual interaction to be statistically significant, and the joint Wald test
+was far from significant ($F = 1.03$, $p = 0.414$).
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{graphs/framing-comparison}
+  \caption{Response rates by incentive framing with 95\% confidence intervals. The two
+    structures produced identical participation despite different probability-prize
+    combinations.}
+  \label{fig:framing_rrs}
+\end{figure}
+
+\subsection{Analysis 3: Heterogeneous Treatment Effects Across Demographic Subgroups}
+
+Two-proportion $z$-tests comparing no-incentive and pooled-incentive response rates
+within each subgroup revealed a consistent pattern: incentive effects were largest among
+groups with the highest baseline response rates. Women showed a 3.4 percentage point
+increase ($\chi^2 = 3.15$, $p = 0.076$), while men showed only 0.9 points
+($\chi^2 = 0.38$, $p = 0.539$). Donors increased by 3.4 points ($\chi^2 = 2.96$,
+$p = 0.085$), while non-donors increased by 1.0 point ($\chi^2 = 0.46$, $p = 0.498$).
+
+\input{tables/XXXX_tab5}
+
+Formal interaction models including treatment-by-demographic terms found no individual
+interaction to be statistically significant. The largest point estimates---for donors
+($\hat{\gamma} = 0.031$, $p = 0.208$) and women ($\hat{\gamma} = 0.027$,
+$p = 0.267$)---were directionally consistent with the $z$-test patterns but well below
+conventional thresholds. Joint Wald tests failed to reject homogeneous treatment effects
+($F = 0.67$, $p = 0.755$).
+
+\subsection{Analysis 4: Incentive Effects on Response Quality}
+
+\subsubsection{Item Nonresponse}
+
+Respondents in the incentive condition left significantly fewer questions unanswered
+(1.99\%) compared to the no-incentive condition (2.81\%), a difference of 0.82
+percentage points ($t = 2.089$, $p = 0.037$). This represents a 29\% reduction in item
+nonresponse. In multivariate OLS controlling for age and race/ethnicity, the incentive
+coefficient was $b = -0.823$, $\text{SE} = 0.393$, $p = 0.037$ ($N = 2{,}342$;
+$R^2 = 0.014$). The effect persisted after accounting for demographic composition.
+
+Five items showed particularly high nonresponse across both conditions: Q2O (8.07\%),
+Q2P (5.47\%), Q2N (5.34\%), Q2L (4.91\%), and Q2G (4.82\%)---all from the Q2 battery,
+all including a ``Not Applicable'' response option.
+
+\subsubsection{Satisficing Behavior}
+
+Straight-lining was virtually nonexistent in both conditions. For the Q1 battery, only 3
+of 2,342 respondents (0.13\%) gave identical responses to 10 or more items, with
+identical rates across conditions ($\chi^2 = 0.00$, $p = 1.000$). The Q2 battery showed
+slightly higher but still minimal rates: 1.47\% in no-incentive versus 0.63\% in
+incentive conditions ($\chi^2 = 2.54$, $p = 0.111$).
+
+Within-person response variance showed no significant differences between conditions.
+Mean standard deviations were nearly identical for Q1 ($1.51$ vs.\ $1.49$,
+$t = -0.88$, $p = 0.380$) and Q2 ($1.67$ vs.\ $1.64$, $t = -1.25$, $p = 0.211$).
+Mulligan non-differentiation scores---a pairwise-difference measure more robust to scale
+endpoints than simple variance---corroborated this result: mean ND scores were virtually
+identical between conditions for Q1, Q2, and all 42 items combined, with no bivariate or
+multivariate test approaching significance.
+
+\subsubsection{Response Distributions}
+
+Chi-square tests on all 42 survey items with Bonferroni--Holm correction found no item
+with a statistically significant distributional difference between conditions after
+correction. The two items with the smallest unadjusted $p$-values---Q1R and Q1A, both
+$p = 0.004$---had adjusted $p$-values of 0.146.
+
+\input{tables/XXXX_tab6}
+
+
+% ============================================
+\section{Results}
+% ============================================
+
+\subsection{Alumni with Stronger Institutional Ties Are Substantially More Likely to
+  Respond}
+
+A total of 2,342 out of 7,333 alumni participated in the survey, yielding an overall
+response rate of 31.9\%.\footnote{People who had asked to receive no surveys were removed
+  from the three random samples ($N = 2{,}499$, $2{,}513$, and $2{,}510$), leaving
+  samples of 2,452, 2,478, and 2,478. Invitations were e-mailed to these people, and a
+  few bounced back as undeliverable ($N = 22$, $29$, and $24$, respectively), yielding
+  final participating samples of 2,430, 2,449, and 2,454.}
+
+Before examining the experimental effects, it is important to establish who responds to
+this survey without any incentive---because this baseline distribution shapes what any
+incentive can and cannot accomplish. Response rates varied substantially by institutional
+connection: donors responded at 40.6\% versus 26.5\% among non-donors; SAA members at
+36.4\% versus 26.3\% among non-members; undergraduate alumni at 35.0\% versus 27.7\%
+among graduate-only alumni. Women responded at markedly higher rates (35.9\%) than men
+(29.5\%). All of these differences were highly significant (all $p < 0.001$).
+
+These differences were consistent across all measured characteristics: donors, SAA
+members, women, and undergraduate alumni all participated at substantially higher rates
+than their counterparts. This baseline heterogeneity is not merely descriptive
+context---it shapes what any incentive can and cannot accomplish.
+
+\subsection{Lottery Incentives Produce a Small, Inconsistent Increase in Response Rates}
+
+Lottery incentives increased overall response rates by approximately 2 percentage points
+(30.6\% to 32.5\%), but this effect was small and statistically marginal. The most
+permissive test---a one-sided $z$-test reflecting our directional hypothesis---yielded
+$p = 0.055$, just above the conventional threshold. Two-sided tests and joint Wald tests
+failed to reject the null of no effect.
+
+The incentive effect's sensitivity to the inclusion of demographic controls is itself
+informative. In bivariate models the effect is $p = 0.107$; once demographic controls are
+added it moves to $p = 0.076$. Neither crosses the 0.05 threshold. Statistical power to
+detect a 2 percentage point effect is inherently limited in a study of this size, and we
+cannot rule out that a true but small effect exists. What we can say is that the evidence
+for a meaningful boost in participation is weak---and that the 91 additional respondents
+generated cost \$10.99 each in prize expenditure. Whether that cost is justified depends
+critically on which respondents the incentives recruited, a question we take up next.
+
+\subsection{Lottery Structure Has No Effect: Framing Does Not Matter When Expected Value
+  Is Equal}
+
+The two lottery structures---five chances at \$100 versus one chance at \$500---produced
+virtually identical response rates (32.58\% and 32.36\%), a gap of 0.22 percentage
+points that was nowhere near statistical significance. This null result held across all
+demographic subgroups as well.
+
+This finding has a clear practical implication for survey researchers working with
+constrained budgets: when designing a lottery incentive for a similar population, the
+structure of the prize is irrelevant. A single large prize and multiple smaller prizes of
+equal total value are interchangeable. Respondents in this population appear to evaluate
+lotteries on the basis of expected value rather than through the psychological
+biases---overweighting of probabilities, sensitivity to prize magnitude---that prospect
+theory might predict.
+
+\subsection{Incentives Widen Existing Participation Gaps Rather Than Narrowing Them}
+
+The most consequential finding of this study is not the overall response rate increase
+but \emph{who} generated it. Incentives increased participation most among the groups
+already most likely to respond: women ($+3.4$ pp) versus men ($+0.9$ pp), and donors
+($+3.4$ pp) versus non-donors ($+1.0$ pp).
+
+The practical implication is that incentives did not broaden the survey's reach---they
+deepened participation among groups with high baseline response propensity. The response
+rate difference between women and men widened from 4.7 to 7.3 percentage points, and
+between donors and non-donors from 12.5 to 14.9 percentage points. Though these
+differential effects did not achieve conventional statistical significance, the consistent
+pattern across subgroups suggests that incentives amplified rather than reduced existing
+differences in who was likely to respond.
+
+\subsection{Data Quality Is Preserved: Incentives Improve Completion Without Biasing
+  Responses}
+
+A concern sometimes raised about financial incentives is that they attract inattentive
+respondents who rush through surveys and provide low-quality answers. The evidence here
+runs counter to that expectation. Incentivized respondents left \emph{fewer} questions
+unanswered (1.99\% vs.\ 2.81\%), a 29\% reduction in item nonresponse that persisted
+after controlling for demographics. The incentive was associated with more thorough
+completion of the survey, not less.
+
+Beyond item nonresponse, every other quality indicator showed no significant difference
+by condition. Straight-lining was negligible and equal across groups. Within-person
+response variance was nearly identical. Response distributions on all 42 substantive
+items showed no significant differences after multiple-comparison correction. Incentivized
+and non-incentivized alumni evaluated their Stanford connection and satisfaction with
+alumni services in statistically indistinguishable ways.
+
+This is an important reassurance: whatever compositional effects incentives introduced,
+they did not corrupt the substantive answers of those who responded. The concern is not
+that incentivized respondents gave worse data---it is that incentives recruited more of
+the same kinds of respondents who would have participated anyway.
+
+
+% ============================================
+\section{Discussion}
+% ============================================
+
+\subsection{Summary of Main Findings}
+
+Three principal findings emerged from this experiment. First, lottery incentives produced
+a small and inconsistent increase in response rates---approximately 2 percentage
+points---that was sensitive to the inclusion of demographic controls ($p$-values ranging
+from 0.055 to 0.107) and failed to achieve significance under joint Wald tests
+($p \approx 0.20$). The 91 additional responses generated came at a total prize cost of
+\$1,000, a marginal cost of \$10.99 per additional respondent. Second, incentive framing
+had no detectable effect when expected value was held constant: five chances at \$100
+produced virtually identical response rates as one chance at \$500 (difference = 0.22
+percentage points, $p = 0.864$). Third, incentives disproportionately increased response
+among subgroups already over-represented at baseline---particularly women and
+donors---amplifying rather than reducing existing differences in who was likely to
+respond.
+
+\subsection{Theoretical Implications}
+
+\subsubsection{Population Characteristics and Lottery Effectiveness}
+
+The weak incentive effect is consistent with prior evidence that lotteries perform poorly
+in affluent, highly educated, and institutionally connected populations
+\parencite{cottrell2015, denton1991}. For Stanford alumni, the \$2 expected value likely
+falls well below any motivational threshold. The pre-existing relationship between alumni
+and the sponsor may further reduce the marginal impact of a financial offer, as
+institutional affiliation already provides substantial leverage for many potential
+respondents.
+
+\subsubsection{Prize Structure and Framing Effects}
+
+The null framing effect suggests that this population evaluated the two lotteries on the
+basis of expected value rather than through the heuristic processing that prospect theory
+might predict. The explicit disclosure of prize amounts and number of winners likely
+facilitated rational calculation of expected value, and a highly educated population may
+be particularly capable of doing so. This contrasts with \textcite{deutskens2004}, who
+found higher-probability, smaller-prize lotteries more effective---a discrepancy that may
+reflect differences in population affluence or the absolute magnitude of the prizes
+offered. Practically, researchers designing lottery incentives for similar populations
+need not devote resources to optimizing the probability-prize combination.
+
+\subsubsection{Respondent Composition and Nonresponse Bias}
+
+The differential effects across subgroups speak directly to the understudied question of
+whether lottery incentives change \emph{who} responds, not just \emph{how many} respond.
+Rather than broadening participation among underrepresented alumni, incentives
+concentrated additional responses among those already most likely to participate. Two
+theoretical accounts are consistent with this pattern. Leverage-saliency theory
+\parencite{groves2000} suggests that the monetary offer was simply more salient to
+respondents already engaged with the institution. The norm of reciprocity offers a
+complementary explanation: donors, having already given to Stanford, may feel the
+incentive activates an obligation of reciprocal exchange that non-donors do not share.
+Either way, the consistent directional pattern suggests that incentives operated through
+mechanisms tied to existing institutional engagement rather than compensating for its
+absence.
+
+\subsection{Methodological Implications}
+
+These findings suggest that lottery incentives warrant careful consideration in
+institutional survey contexts. Cost per additional response is an incomplete metric when
+incentives disproportionately attract respondents who are already over-represented: the
+cost per additional representative response may substantially exceed \$10.99. Researchers
+should assess baseline heterogeneity in response propensity before deploying incentives,
+and consider whether alternative strategies---targeted outreach to underrepresented
+groups, prepaid incentives \parencite{larson2003}, or additional contact
+attempts---would better serve representativeness goals without differential effects.
+Because all conditions in this study received identical follow-up protocols, we cannot
+assess whether incentives reduce the optimal number of reminders needed---a potential
+cost offset that warrants investigation in future designs that manipulate both incentives
+and follow-up intensity \parencite{olsen2012}. Evaluations of incentive effectiveness
+should routinely examine the demographic breakdown of respondents across conditions, not
+merely overall response rates.
+
+\subsection{Limitations and Future Directions}
+
+Several limitations qualify these conclusions. The Stanford alumni population is more
+educated, affluent, and institutionally connected than most survey populations, which
+limits generalizability; incentive effects may be larger, more uniform, or differently
+distributed in less engaged or lower-income samples. The modest expected value (\$2 per
+respondent) may fall below effectiveness thresholds that larger prizes would cross, and
+dose-response questions remain open. The reciprocity mechanism we hypothesize for donors
+was not directly tested and would benefit from experimental manipulation---for instance,
+by explicitly referencing past donations in incentive messaging and comparing responses
+to those with no prior giving history. Finally, this study examined a single survey wave;
+whether incentives create expectations that depress future response in their absence is
+unknown.
+
+\subsection{Conclusion}
+
+Lottery incentives produced a small and inconsistent increase in response rates while
+disproportionately motivating subgroups already over-represented among respondents,
+widening existing gaps in participation. Data quality was preserved---incentivized
+respondents completed the survey more thoroughly and answered substantive questions in
+statistically indistinguishable ways---but this reassurance does not address the
+compositional concern. When incentives differentially attract high-propensity
+respondents, they can increase nonresponse bias even as they increase total response.
+
+For researchers designing surveys within institutional populations---alumni, employees,
+members---the practical recommendation is clear: before deploying a lottery incentive,
+assess who is already likely to respond and whether the incentive will reach those who
+are not. If baseline response propensity is heterogeneous and strongly correlated with
+the survey's substantive variables, a lottery incentive may deliver a marginal increase
+in total response while widening existing differences in who participates. The
+appropriate benchmark for evaluating incentive strategies is not response rate alone, but
+whether the additional responses improve the representativeness and analytical value of
+the data.
+
+\section*{Acknowledgements}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "srm_main"
+%%% End:
